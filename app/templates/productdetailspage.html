@@ -1,0 +1,229 @@
+{% extends 'navbar.html' %}
+
+{% block my_block %}
+
+<h1>Product Details page</h1>
+<div class="container-fluid">
+
+
+  <div class="row">
+
+
+  <div class="img/vid display col-md-5">
+
+      {% for imv in imgvids  %}
+              <div class="mySlides">
+                <img src="{{url_for('static', filename=imv.imgOrvid_link)}}" style="width:100%">
+              </div>
+
+      {% endfor  %}
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <div class="row">
+
+        {% for imv in imgvids  %}
+                <div class="column">
+                  <img class="demo cursor" src="{{url_for('static', filename=imv.imgOrvid_link)}}" style="width:100%;" onclick="currentSlide({{loop.index}}+1)" alt="">
+                </div>
+          {% endfor %}
+
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="prodnameandspecs col-md-12">
+
+          <h3>{{product.product_name}}</h3><br>
+
+          <table class="table table-striped">
+  <thead>
+<!--    <tr>-->
+<!--      <th scope="col">#</th>-->
+<!--      <th scope="col">First</th>-->
+<!--      <th scope="col">Last</th>-->
+<!--      <th scope="col">Handle</th>-->
+<!--    </tr>-->
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>Color(s):</td>
+      <td>{{product.product_color}}</td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>Product Dimensions:</td>
+      <td>{{product.product_dimensions}}</td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td>Power/Wattage:</td>
+      <td>{{product.power_wattage}}</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+
+    <div class="description_and_linkbuts col-md-7">
+      <div class="row">
+          <div class="productdescriptionsection col-md-12">
+            <h2>Product Description</h2>
+
+            <p>{{product.product_description}}</p>
+          </div>
+          <div class="row">
+            <div class="butlinks">
+                <a type="button" class="btn btn-primary" href={{product.amazon_link}}>Amazon Link</a><br>
+                <a type="button" class="btn btn-warning" href={{product.aliexpress_link}}>Aliexpress Link</a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  <!-- product_id = db.Column(db.Integer, primary_key=True)-->
+  <!--    product_name = db.Column(db.String(100))-->
+  <!--    category_id = db.Column(db.Integer, db.ForeignKey('categories.category_id'))-->
+  <!--    subcategory_id = db.Column(db.Integer, db.ForeignKey('subcategories.subcategory_id'))-->
+  <!--    short_product_description = db.Column(db.String(200))-->
+  <!--    product_description = db.Column(db.String(2000))-->
+  <!--    product_dimensions = db.Column(db.String(100))-->
+  <!--    power_wattage = db.Column(db.String(100))-->
+  <!--    product_color = db.Column(db.String(100))-->
+  <!--    price_USD = db.Column(db.Float)-->
+  <!--    amazon_link = db.Column(db.String(2000))-->
+  <!--    aliexpress_link = db.Column(db.String(2000))-->
+  <!--    imagesandvideos = db.relationship('Imagesandvideos', backref='products', lazy='dynamic')-->
+
+
+    </div>
+  </div>
+
+
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+<!--move links to right a bit-->
+.butlinks{
+  margin-left: 5px;
+}
+
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: white;
+  padding: 2px 16px;
+  \
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+{% endblock %}

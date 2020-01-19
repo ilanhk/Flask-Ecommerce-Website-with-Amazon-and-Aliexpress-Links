@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+
+<h1>Add a New Product</h1>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.product_name.label }}
+        {{ form.product_name(size=32) }}
+        <br>
+        {{ form.category_name.label }} <!--how to make dropdown options with all cat and if doesnt exist make a new one-->
+        {{ form.category_name(size=32) }}
+        <br>
+        {{ form.subcategory_name.label }}   <!--how to make dropdown options with all cat and if doesnt exist make a new one-->
+        {{ form.subcategory_name(size=32) }}
+        <br>
+         {{ form.short_product_description.label }}
+        {{ form.short_product_description(size=32) }}
+        <br>
+        {{ form.product_description.label }}  <!--how to make textbox bigger for desciption maybe with bullet points-->
+        {{ form.product_description(size=50) }}
+        <br>
+        {{ form.product_dimensions.label }}
+        {{ form.product_dimensions(size=50) }}
+        <br>
+        {{ form.power_wattage.label }}
+        {{ form.power_wattage(size=32) }}
+        <br>
+        {{ form.product_color.label }}
+        {{ form.product_color(size=32) }}
+        <br>
+        {{ form.price_USD.label }}
+        {{ form.price_USD(size=32) }}
+        <br>
+        {{ form.amazon_link.label }}
+        {{ form.amazon_link(size=32) }}
+        <br>
+         {{ form.aliexpress_link.label }}
+        {{ form.aliexpress_link(size=32) }}
+        <br>
+    <!-- how to add mulitiple photos and add photos and videos and where to save vid files?????????????????????????????????-->
+        <button class="btn btn-primary">
+            {{ form.submit() }}
+        </button>
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block my_block %}
+
+<h1>Sign up</h1>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.last_name.label }-form.last_name(size=32) -gets limits the size of the text box by 32-->}     <!--form.last_name.label - gets the form text book with its name-->
+        {{ form.last_name(size=32) }} <!-
+        <br>
+        {{ form.first_name.label }}
+        {{ form.first_name(size=32) }}
+        <br>
+        {{ form.email.label }}
+        {{ form.email(size=32) }}
+        <br>
+        {{ form.password.label }}
+        {{ form.password(size=32) }}
+        <br>
+        <button class="btn btn-primary">
+            {{ form.submit() }}
+        </button>
+
+    </form>
+
+{% endblock %}
