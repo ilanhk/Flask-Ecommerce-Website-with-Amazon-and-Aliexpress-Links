@@ -14,8 +14,8 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">MyBusiness</a>
+  <nav class="navbar navbar-expand-lg navbar-dark navbarcolor">
+    <a class="navbar-brand" href="{{ url_for('index')}}">MyBusiness</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,17 +23,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ url_for('all_products') }}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#">About Us</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="Our Products" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Product Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Kitchen Appliances </a>
+            <a class="dropdown-item" href="#Kitchen_Appliances">Kitchen Appliances </a>
             <a class="dropdown-item" href="#">Household and Home Appliances </a>
             <a class="dropdown-item" href="#">Cookware </a>
             <div class="dropdown-divider"></div>
@@ -42,26 +42,47 @@
             <a class="dropdown-item" href="#">Beauty and Cosmetics</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('register') }}">Sign in</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" method="POST" action="{{ url_for('all_products') }}">
+
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-  <!--    how to search for products with search bar????-->
     </div>
   </nav>
 
-
+{% with messages = get_flashed_messages(with_categories = True) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="alert alert-{{ category }}">
+    {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith%}
+<!--  with_categories = true for success category color to show up in messages-->
  {% block my_block %}{% endblock %}
 
-<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+<footer id="sticky-footer" class="py-4 footercolor text-white-50">
     <div class="text-center">
       <small>Copyright &copy; Your Website</small>
     </div>
 </footer>
+
+
+  <style>
+    .navbarcolor{
+    background-color: #0079a4;
+    }
+
+    .footercolor{
+    background-color: #0079a4;
+    }
+
+  </style>
 
 </body>
 </html>

@@ -2,20 +2,20 @@
 
 {% block my_block %}
 
-<h1>Our Products</h1><br><br>
+<h1>Our Search</h1><br><br>
 
-  {% for cat in categories %}
+{% if categories_list %}
+
+  {% for cat in categories_list %}
   <h2 id="{{cat.category_name}}">{{cat.category_name}}</h2><br><br>
 
-   {% for sub in subcategories %}
-      {% if sub.category_id == cat.category_id%}
+   {% for sub in cat.subcategories %}
       <h3>{{sub.subcategory_name}}</h3><br>
-      {% endif  %}
+
 
     <div class="container-fluid">
       <div class="row">
-      {% for prod in products %}
-        {% if prod.category_id == cat.category_id and prod.subcategory_id == sub.subcategory_id %}
+      {% for prod in cat.subcategories.products %}
           <a type="button" class="btn btn-link col-md-3" href="{{ url_for('product_details', prod_id =prod.product_id)}}" style="text-decoration: none;">
             <div class="card row1 border-primary mb-3 " id="" style="width: 18rem;">
                 {{prod.avatar}}
@@ -26,42 +26,20 @@
               </div>
             </div>
           </a>
-        {% endif  %}
       {% endfor %}
       </div>
     </div>
     {% endfor %}
   {% endfor %}
 
-<!--    <style>-->
-<!--    .row1{-->
-<!--    margin: 10px;-->
-<!--    height: 20px;-->
-<!--    width: 20px;-->
-<!--    }-->
+{% elif  subcategories_list %}
 
-<!--    .flex-container{-->
-<!--    display:flex !important;-->
-<!--    flex-wrap: wrap;-->
-<!--    justify-content: space-between !important;-->
-<!--    }-->
 
-<!--.flex-container {-->
-<!--  display: flex;-->
-<!--  flex-wrap: wrap;-->
-<!--}-->
+{% elif  products_list %}
 
-<!--.flex-container > row1 {-->
-<!--  width: 700px;-->
-<!--  margin: 10px;-->
-<!--  text-align: center;-->
-<!--  line-height: 75px;-->
-<!--  font-size: 30px;-->
-<!--}-->
+{% else %}
 
-<!--.row1{-->
-<!-- margin:5px;-->
-<!--}-->
-<!--    </style>-->
 
+
+{% endif  %}
 {% endblock %}

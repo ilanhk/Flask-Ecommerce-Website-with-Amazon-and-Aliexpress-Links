@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms.validators import data_required
-from wtforms import StringField, SubmitField, FloatField
-
+from wtforms.validators import data_required, Length, Email, EqualTo
+from wtforms import StringField, SubmitField, FloatField, PasswordField, BooleanField
+# importing email will check if its a valid email address, Equalto to make sure the input is the same value as the other input
+# Booleanfield is to see if its true/false useful to remember current users
 
 class AddProductForm(FlaskForm):
 
@@ -20,8 +21,28 @@ class AddProductForm(FlaskForm):
     submit = SubmitField('Add a New Product')
 
 class AddCustomer(FlaskForm):
-    last_name = StringField('Last Name', validators=[data_required()])
-    first_name = StringField('First Name', validators=[data_required()])
-    email= StringField('Email Address', validators=[data_required()])
-    password = StringField('Password', validators=[data_required()])
-    submit = SubmitField('Submit')
+    username = StringField('Username: ', validators=[data_required(), Length(min=2, max=20)])
+    last_name = StringField('Last Name: ', validators=[data_required(), Length(min=2, max=20)])
+    first_name = StringField('First Name: ', validators=[data_required(), Length(min=2, max=20)])
+    email= StringField('Email Address: ', validators=[data_required(), Email()])
+    password = PasswordField('Password: ', validators=[data_required()])
+    confirm_password = PasswordField('Confirm Password: ', validators=[data_required(), EqualTo(password)])
+    submit = SubmitField('Signup')
+
+
+class Loginform(FlaskForm):
+    email = StringField('Email Address: ', validators=[data_required(), Email()])
+    password = PasswordField('Password: ', validators=[data_required()])
+    remember = BooleanField('Remember me')
+    submit = SubmitField('Login')
+
+
+# for Search Bar:
+
+class SearchForm(FlaskForm):
+  search = StringField('search', [data_required()])
+  submit = SubmitField('Search')
+
+
+
+
