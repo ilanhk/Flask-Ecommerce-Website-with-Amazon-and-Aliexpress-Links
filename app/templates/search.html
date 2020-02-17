@@ -4,42 +4,65 @@
 
 <h1>Our Search</h1><br><br>
 
-{% if categories_list %}
+{% if categories %}
+    <div class="category">
 
-  {% for cat in categories_list %}
-  <h2 id="{{cat.category_name}}">{{cat.category_name}}</h2><br><br>
+    <h3>Based on Category Name:</h3>
+{% for cat in categories %}
+    <ul>
+        <li>
+            <p><a class="aa" href="{{ url_for('category', cat_id= cat.category_id)}}">{{cat.category_name}}</a></p>
+        </li>
+    </ul>
 
-   {% for sub in cat.subcategories %}
-      <h3>{{sub.subcategory_name}}</h3><br>
-
-
-    <div class="container-fluid">
-      <div class="row">
-      {% for prod in cat.subcategories.products %}
-          <a type="button" class="btn btn-link col-md-3" href="{{ url_for('product_details', prod_id =prod.product_id)}}" style="text-decoration: none;">
-            <div class="card row1 border-primary mb-3 " id="" style="width: 18rem;">
-                {{prod.avatar}}
-              <img src="{{ url_for('static', filename=prod.imagesandvideos.first()) }}" class="card-img-top" alt="image not found" style="width=100px; height=100px;" >
-              <div class="card-body card">
-                <h5 class="card-title">{{prod.product_name}}</h5>
-                <p class="card-text">{{prod.short_product_description}}</p>
-              </div>
-            </div>
-          </a>
-      {% endfor %}
-      </div>
-    </div>
-    {% endfor %}
-  {% endfor %}
-
-{% elif  subcategories_list %}
+{% endfor %}
+        </div>
+{% endif %}
 
 
-{% elif  products_list %}
+{% if  subcategories %}
+ <div class="subcategory">
 
-{% else %}
+    <h3>Based on Subcategory Name:</h3>
+{% for sub in subcategories %}
+    <ul>
+        <li>
+            <p><a class="aa" href="#">{{sub.subcategory_name}}</a></p>
+        </li>
+    </ul>
 
+{% endfor %}
+        </div>
+{% endif %}
+
+
+{% if  products %}
+ <div class="product">
+
+    <h3>Based on Product Name:</h3>
+{% for prod in products %}
+    <ul>
+        <li>
+            <p><a class="aa" href="#">{{prod.product_name}}</a></p>
+        </li>
+    </ul>
+
+{% endfor %}
+        </div>
+{% endif %}
+
+
+
+{% if not categories and not subcategories and not products %}
+<div class="404">
+    <h1 id="fof">404: Input {{text}} Does Not Exist</h1>
+    <img src="https://media3.giphy.com/media/kQbMO5X7UA1C8/giphy.gif" alt="The Receptionist was also eaten by Zombies" style="height: 600px; width: 660px;">
+</div>
 
 
 {% endif  %}
+
+
+
+
 {% endblock %}

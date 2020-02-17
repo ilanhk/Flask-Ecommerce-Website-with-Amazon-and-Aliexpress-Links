@@ -1,6 +1,6 @@
 from app import app, db
 from app.models import Products, Categories, Subcategories, Imagesandvideos
-from flask import redirect, render_template, flash, url_for
+from flask import redirect, render_template, flash, url_for, request
 from app.forms import Loginform, AddCustomer, AddProductForm
 
 # flash is for flash messages
@@ -74,15 +74,13 @@ def login():
 
 @app.route('/search', methods=['GET','POST'])
 def search():
-    if method != 'POST':
-        return render_template(request, 'search.html')
-    text = request.POST.get('search', '')
+    text = request.form['searchbar']
 
-    categories = Categories.query.filter(Categories.category_name.like(text)).all()
+    categories = Categories.query.filter(Categories.category_name.ilike(text)).all()
 
-    subcategories = Subcategories.query.filter(Subcategories.subcategory_name.like(text)).all()
+    subcategories = Subcategories.query.filter(Subcategories.subcategory_name.ilike(text)).all()
 
-    products = Products.query.filter(Products.product_name.like(text)).all()
+    products = Products.query.filter(Products.product_name.ilike(text)).all()
 
     # Post.query.filter(Post.title.ilike('%some_phrase%'))
 
@@ -91,4 +89,4 @@ def search():
     # posts = Post.query.filter(Post.tags.like(search)).all()
 
 
-    return render_template('allproductspage.html', products=products, categories=categories, subcategories=subcategories)
+    return render_template('search.html', products=products, categories=categories, subcategories=subcategories)
