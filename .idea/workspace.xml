@@ -2,57 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db3f3f20-8871-46ae-bdd4-51ef0a7a3c4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Hackathon2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/addtotable.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/5Drip_Coffee_Maker1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/5Drip_Coffee_Maker2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/5Drip_Coffee_Maker3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/AirFryer1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/AirFryer2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/AirFryer3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/AirFryer4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Gsteamer1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Gsteamer2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Gsteamer3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Mmirror1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Mmirror2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Mmirror3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Nespresso1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Nespresso2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Nespresso3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/OvenGloves1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/OvenGloves2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/OvenGloves3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Sonos1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Sonos2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/Sonos3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/knifeSet1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/knifeSet2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/knifeSet3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/radio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/yogamatblue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/yogamatorange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/yogamatpink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/FormTo_ADDProduct.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/allproductspage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/formtoaddnewcustomer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/productdetailspage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/versions/38cb5731123f_first_migration_all_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hackathon2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hackathon2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/allproductspage.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/allproductspage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,17 +27,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1V0n0jQuNgwHtk8DkKTXrkmTevX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Precision_Donations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -207,35 +167,42 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1579446300347">
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579776295360">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1579446300347" />
-    <state width="1830" height="286" key="GridCell.Tab.0.bottom" timestamp="1579447056128">
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1579776295360" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580640691389">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="286" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1579447056128" />
-    <state width="1830" height="286" key="GridCell.Tab.0.center" timestamp="1579447056127">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1580640691389" />
+    <state width="1830" height="286" key="GridCell.Tab.0.bottom" timestamp="1581952579978">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="286" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1579447056127" />
-    <state width="1830" height="286" key="GridCell.Tab.0.left" timestamp="1579447056126">
+    <state width="1830" height="286" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1581952579978" />
+    <state width="1830" height="286" key="GridCell.Tab.0.center" timestamp="1581952579977">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="286" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1579447056126" />
-    <state width="1830" height="286" key="GridCell.Tab.0.right" timestamp="1579447056128">
+    <state width="1830" height="286" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1581952579977" />
+    <state width="1830" height="286" key="GridCell.Tab.0.left" timestamp="1581952579977">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="286" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1579447056128" />
-    <state x="482" y="187" key="SettingsEditor" timestamp="1576399479264">
+    <state width="1830" height="286" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1581952579977" />
+    <state width="1830" height="286" key="GridCell.Tab.0.right" timestamp="1581952579978">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1576399479264" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1578816789129">
+    <state width="1830" height="286" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1581952579978" />
+    <state x="482" y="187" key="SettingsEditor" timestamp="1579788932841">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578816789129" />
+    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1579788932841" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1581937512477">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1581937512477" />
     <state x="342" y="72" width="1373" height="704" key="dock-window-1" timestamp="1576508548931">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

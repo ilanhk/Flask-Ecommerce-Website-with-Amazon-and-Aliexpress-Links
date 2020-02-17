@@ -23,27 +23,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('all_products') }}">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link" href="{{ url_for('about')}}">About Us</a>
         </li>
         <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="Our Products" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Product Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#Kitchen_Appliances">Kitchen Appliances </a>
-            <a class="dropdown-item" href="#">Household and Home Appliances </a>
-            <a class="dropdown-item" href="#">Cookware </a>
+            <a class="dropdown-item" href="{{ url_for('category', cat_id= 1)}}">Kitchen Appliances </a>
+            <a class="dropdown-item" href="{{ url_for('category', cat_id= 2)}}">Household and Home Appliances </a>
+            <a class="dropdown-item" href="{{ url_for('category', cat_id= 3)}}">Cookware </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Consumer Electronics</a>
-            <a class="dropdown-item" href="#">Sports Equipment</a>
-            <a class="dropdown-item" href="#">Beauty and Cosmetics</a>
+            <a class="dropdown-item" href="{{ url_for('category', cat_id= 5)}}">Consumer Electronics</a>
+            <a class="dropdown-item" href="{{ url_for('category', cat_id= 4)}}">Sports Equipment</a>
+            <a class="dropdown-item" href="{{ url_for('category', cat_id= 6)}}">Beauty and Cosmetics</a>
           </div>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('register') }}">Sign in</a>
+          <a class="nav-link" href="{{ url_for('login') }}">Login</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" method="POST" action="{{ url_for('all_products') }}">
@@ -66,11 +63,54 @@
 <!--  with_categories = true for success category color to show up in messages-->
  {% block my_block %}{% endblock %}
 
-<footer id="sticky-footer" class="py-4 footercolor text-white-50">
-    <div class="text-center">
-      <small>Copyright &copy; Your Website</small>
+<div class="mt-5 pt-5 pb-5 footer">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-xs-12 about-company">
+      <h2>MyBusiness</h2>
+      <p class="pr-5 text-white-50">Follow us: </p>
+      <p>
+          <a href="https://www.facebook.com/ilan.lieberman.3">
+            <img class="logo" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-facebook_-512.png">
+          </a>
+          <a href="https://www.linkedin.com/in/ilan-lieberman-9a1043132/">
+            <img class="logo" src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Linkedin-512.png">
+          </a>
+          <a href="https://www.instagram.com/ilan.lieberman.3/">
+            <img class="logo" src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/instagram-512.png">
+          </a>
+          <a href="https://github.com/ilanhk">
+            <img class="logo" src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Github-512.png">
+          </a>
+      </p>
     </div>
-</footer>
+
+    <div class="col-lg-3 col-xs-12 links">
+      <h4 class="mt-lg-0 mt-sm-3 ">Categories</h4>
+        <ul class="m-0 p-0">
+          <li>- <a class="footlinks" href="{{ url_for('category', cat_id= 1)}}">Kitchen Appliances</a></li>
+          <li>- <a class="footlinks" href="{{ url_for('category', cat_id= 2)}}">Household and Home Appliances</a></li>
+          <li>- <a class="footlinks" href="{{ url_for('category', cat_id= 3)}}">Cookware</a></li>
+          <li>- <a class="footlinks" href="{{ url_for('category', cat_id= 5)}}">Consumer Electronics</a></li>
+          <li>- <a class="footlinks" href="{{ url_for('category', cat_id= 4)}}">Sports Equipment</a></li>
+          <li>- <a class="footlinks" href="{{ url_for('category', cat_id= 6)}}">Beauty and Cosmetics</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12 location">
+      <h4 class="mt-lg-0 mt-sm-4">Contacts</h4>
+      <p class="mb-0"><i class="fa fa-phone mr-3"></i>(+972) 050-944-6829</p>
+      <p><i class="fa fa-envelope-o mr-3"></i>ilanlieberman@hotmail.com</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col copyright">
+      <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>
+    </div>
+  </div>
+</div>
+</div>
+
+
 
 
   <style>
@@ -78,9 +118,54 @@
     background-color: #0079a4;
     }
 
-    .footercolor{
-    background-color: #0079a4;
+
+  .footer{
+  background: #0079a4;
+  color:white;
+  }
+
+
+  .links{
+    ul {list-style-type: none;}
+    li a{
+      color: white;
+      transition: color .2s;
+      &:hover{
+        text-decoration:none;
+        color:#4180CB;
+        }
     }
+  }
+  .about-company{
+    i{font-size: 25px;}
+    a{
+      color:white;
+      transition: color .2s;
+      &:hover{color:#4180CB}
+    }
+  }
+
+  .logo{
+  height: 6vh;
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+.footlinks{
+  color: white;
+}
+
+  .location{
+    i{font-size: 18px;}
+  }
+
+  .copyright p{border-top:1px solid rgba(255,255,255,.1);}
+
+}
+
+
 
   </style>
 

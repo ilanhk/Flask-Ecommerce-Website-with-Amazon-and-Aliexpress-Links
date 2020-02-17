@@ -7,13 +7,28 @@ from app.forms import Loginform, AddCustomer, AddProductForm
 
 @app.route('/')
 def index():
-    return render_template('index.html', )
+    return render_template('index.html')
+
+@app.route('/About_Us')
+def about():
+    return render_template('about.html', )
+
 
 @app.route('/allproductspage')
 def all_products():
     categories = Categories.query.all()
     subcategories= Subcategories.query.all()
     products = Products.query.all()
+
+    return render_template('allproductspage.html', products=products, categories=categories, subcategories=subcategories)
+
+
+@app.route('/Category/<int:cat_id>')
+def category(cat_id):
+    categories = Categories.query.filter_by(category_id=cat_id).first()
+    print(f'this is the {categories}')
+    subcategories= Subcategories.query.filter_by(category_id=cat_id).all()
+    products = Products.query.filter_by(category_id=cat_id).all()
 
     return render_template('allproductspage.html', products=products, categories=categories, subcategories=subcategories)
 
@@ -63,11 +78,11 @@ def search():
         return render_template(request, 'search.html')
     text = request.POST.get('search', '')
 
-    categories_list = Categories.query.filter(Categories.category_name.like(text)).all()
+    categories = Categories.query.filter(Categories.category_name.like(text)).all()
 
-    subcategories_list = Subcategories.query.filter(Subcategories.subcategory_name.like(text)).all()
+    subcategories = Subcategories.query.filter(Subcategories.subcategory_name.like(text)).all()
 
-    products_list = Products.query.filter(Products.product_name.like(text)).all()
+    products = Products.query.filter(Products.product_name.like(text)).all()
 
     # Post.query.filter(Post.title.ilike('%some_phrase%'))
 
@@ -75,9 +90,5 @@ def search():
     # search = "%{}%".format(tag)
     # posts = Post.query.filter(Post.tags.like(search)).all()
 
-    print(f'this is a list of cat: {categories_list}')
-    print(f'this is a list of subcat: {subcategories_list}')
-    print(f'this is a list of products: {products_list}')
 
-    
-    return render_template('search.html', categories_list, subcategories_list, products_list)
+    return render_template('allproductspage.html', products=products, categories=categories, subcategories=subcategories)
