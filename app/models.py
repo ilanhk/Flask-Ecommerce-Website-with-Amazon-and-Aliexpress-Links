@@ -1,5 +1,18 @@
 from app import db
 
+# Users Section:
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), unique=True, nullable=False)
+    last_name = db.Column(db.String(20), unique=True, nullable=False)
+    first_name = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+
+    def __repr__(self):
+      return f'<User: {self.first_name} {self.last_name} with Username: {self.username} >'
+
 
 class Categories(db.Model):
     category_id = db.Column(db.Integer, primary_key=True)
@@ -50,6 +63,9 @@ class Imagesandvideos(db.Model):
 
     def __str__(self):   ##Omer put this to show links in string format bc html shows in s
         return self.imgOrvid_link
+
+
+
 
 
 

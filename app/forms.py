@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.validators import data_required, Length, Email, EqualTo
+from wtforms.validators import data_required, Length, Email, EqualTo, InputRequired
 from wtforms import StringField, SubmitField, FloatField, PasswordField, BooleanField
 # importing email will check if its a valid email address, Equalto to make sure the input is the same value as the other input
 # Booleanfield is to see if its true/false useful to remember current users
@@ -17,7 +17,7 @@ class AddProductForm(FlaskForm):
     price_USD = FloatField('Price(USD)', default=0)
     amazon_link = StringField('Amazon Link', validators=[data_required()])
     aliexpress_link =StringField('Aliexpress Link', validators=[data_required()])
-    # add photos and videos ?????????????????????????????????
+    # add a date field when product has been added
     submit = SubmitField('Add a New Product')
 
 class AddCustomer(FlaskForm):

@@ -6,33 +6,35 @@
 
 {% if categories == [] %}
   {% for cat in categories %}
-  <h2 id="{{cat.category_name}}">{{cat.category_name}}</h2><br><br>
+    <h2 id="{{cat.category_name}}">{{cat.category_name}}</h2><br><br>
 
    {% for sub in subcategories %}
       {% if sub.category_id == cat.category_id%}
       <h3>{{sub.subcategory_name}}</h3><br>
       {% endif  %}
 
-    <div class="container-fluid">
-      <div class="row">
-      {% for prod in products %}
-        {% if prod.category_id == cat.category_id and prod.subcategory_id == sub.subcategory_id %}
-          <a type="button" class="btn btn-link col-md-3" href="{{ url_for('product_details', prod_id =prod.product_id)}}" style="text-decoration: none;">
-            <div class="card row1 border-primary mb-3 " id="" style="width: 18rem;">
-                {{prod.avatar}}
-              <img src="{{ url_for('static', filename=prod.imagesandvideos.first()) }}" class="card-img-top" alt="image not found" style="width=100px; height=100px;" >
-              <div class="card-body card">
-                <h5 class="card-title">{{prod.product_name}}</h5>
-                <p class="card-text">{{prod.short_product_description}}</p>
-              </div>
-            </div>
-          </a>
-        {% endif  %}
-      {% endfor %}
-      </div>
-    </div>
+        <div class="container-fluid">
+          <div class="row">
+          {% for prod in products %}
+            {% if prod.category_id == cat.category_id and prod.subcategory_id == sub.subcategory_id %}
+              <a type="button" class="btn btn-link col-md-3" href="{{ url_for('product_details', prod_id =prod.product_id)}}" style="text-decoration: none;">
+                <div class="card row1 border-primary mb-3 " id="" style="width: 18rem;">
+                    {{prod.avatar}}
+                  <img src="{{ url_for('static', filename=prod.imagesandvideos.first()) }}" class="card-img-top" alt="image not found" style="width=100px; height=100px;" >
+                  <div class="card-body card">
+                    <h5 class="card-title">{{prod.product_name}}</h5>
+                    <p class="card-text">{{prod.short_product_description}}</p>
+                  </div>
+                </div>
+              </a>
+            {% endif  %}
+          {% endfor %}
+          </div>
+        </div>`
     {% endfor %}
-  {% endfor %}
+{% endfor %}
+
+
 
 {% else %}
 

@@ -1,6 +1,10 @@
 
 from app import db
 from app.models import Products, Imagesandvideos, Categories, Subcategories
+import requests
+
+
+
 
 # create instances for categories:
 Kitchen_Appliances = Categories(category_name= 'Kitchen Appliances')

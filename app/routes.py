@@ -2,6 +2,8 @@ from app import app, db
 from app.models import Products, Categories, Subcategories, Imagesandvideos
 from flask import redirect, render_template, flash, url_for, request
 from app.forms import Loginform, AddCustomer, AddProductForm
+from app.models import Categories, Subcategories, Products
+
 
 # flash is for flash messages
 
@@ -32,11 +34,7 @@ def category(cat_id):
 
     return render_template('allproductspage.html', products=products, categories=categories, subcategories=subcategories)
 
-# @app.route('/<str:cat_id>')
-# def product_details(cat_di):
-#     categories = Categories.query.filter_by(product_id=prod_id).first()
-#     subcategories = Subcategories.query.all()
-#     products = Products.query.all()
+
 
 @app.route('/productdetails/<int:prod_id>')
 def product_details(prod_id):
@@ -55,6 +53,11 @@ def register():
     if form.validate_on_submit():
         flash(f'Account Created for {form.username.data}!', 'success')
         return redirect(url_for('all_products'))
+    elif None:
+        return redirect(url_for('register'))
+    else:
+        flash(f'Account NOT Created for {form.username.data}!', 'danger')
+    # not validating add errors section 
 
     return render_template('register.html', title='Register', form=form)
 
@@ -63,7 +66,7 @@ def login():
     form = Loginform()
     if form.validate_on_submit():
         flash(f'Welcome {form.username.data}!', 'success')
-        return redirect(url_for('all_products'))
+        return redirect(url_for('index'))
     else:
         flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)

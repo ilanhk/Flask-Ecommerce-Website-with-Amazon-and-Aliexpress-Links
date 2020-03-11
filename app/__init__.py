@@ -2,7 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy #the link to python to database
 from flask_migrate import Migrate #to allow migration
 import random
-
+from app.forms import AddProductForm, AddCustomer, Loginform
+# from app.models import Categories, Subcategories, Products, Imagesandvideos
 
 import os  #the main purpose of the OS module is to interact with your operating system. so like a command line
 
